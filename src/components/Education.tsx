@@ -27,7 +27,6 @@ export const Education = () => {
           <h3 className="text-h3 font-display font-bold mb-2">
             Presbyterian Boys Secondary School
           </h3>
-          
           <motion.p
             className="text-body font-body mb-4"
             initial={{ opacity: 0 }}
@@ -36,7 +35,6 @@ export const Education = () => {
           >
             2021 – 2023
           </motion.p>
-
           <motion.p
             className="text-body-small font-body opacity-70"
             initial={{ opacity: 0 }}
@@ -54,10 +52,11 @@ export const Education = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            CERTIFICATIONS
+            CERTIFICATIONS & AWARDS
           </motion.h3>
 
           <motion.div
+            className="mb-10"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -65,13 +64,27 @@ export const Education = () => {
             <h4 className="text-body-large font-display font-bold mb-2">
               Cybercrime Awareness Workshop
             </h4>
-            
             <p className="text-body-small font-body mb-2 opacity-70">
               U.S. Department of State, Bureau of International Narcotics and Law Enforcement Affairs
             </p>
-            
             <p className="text-metadata font-body opacity-50">
               November 2022
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <h4 className="text-body-large font-display font-bold mb-2">
+              Innovative Student of the Year
+            </h4>
+            <p className="text-body-small font-body mb-2 opacity-70">
+              Computer Science Department
+            </p>
+            <p className="text-metadata font-body opacity-50">
+              2025
             </p>
           </motion.div>
         </div>
