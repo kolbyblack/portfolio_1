@@ -33,6 +33,36 @@ const projects: Project[] = [
     status: "In Development (Feb 2025 – Present)",
     associated: "YT Groups",
   },
+  {
+    number: "03",
+    name: "POLYEDGE",
+    tagline: "Prediction Market Intelligence Platform",
+    description:
+      "Browser-based prediction market intelligence tool that aggregates live news, applies multi-factor AI signal analysis, and produces quantified betting intelligence for Polymarket users. Features a 2-call Anthropic API architecture, confidence scoring, sentiment analysis, and signal breakdowns across momentum, media coverage, expert consensus, and market sentiment.",
+    stack: "HTML5, CSS3, Vanilla JavaScript, Anthropic Claude API",
+    status: "Completed (Mar 2026)",
+    associated: "YT Groups",
+  },
+  {
+    number: "04",
+    name: "SCOUT",
+    tagline: "Tactical Football Betting Intelligence Platform",
+    description:
+      "Local football betting intelligence platform built from a monolithic JSX file into a structured multi-component architecture. Integrates three live APIs — football-data.org for standings and fixtures, The Odds API for live betting odds, and Anthropic Claude for AI match analysis. Features TONI (Tactical Overperformance Normalised Index), an original metric scoring teams -10 to +10 by combining scoring efficiency, points vs goal difference, form momentum, defensive fragility, and odds market divergence to identify flukes vs legitimate form.",
+    stack: "React, JavaScript, football-data.org API, The Odds API, Anthropic Claude API",
+    status: "Completed (2026)",
+    associated: "YT Groups",
+  },
+  {
+    number: "05",
+    name: "STUDYBUDDY",
+    tagline: "AI-Powered Study Assistant",
+    description:
+      "AI-powered study assistant that helps students transform lecture notes and study materials into interactive flashcards. Full-stack application with secure OAuth2 authentication, persistent storage, and a React frontend backed by a FastAPI service layer.",
+    stack: "Python, FastAPI, TypeScript, React, PostgreSQL, OAuth2",
+    status: "Completed (2026)",
+    associated: "YT Groups",
+  },
 ];
 
 const ProjectBlock = ({ project, index }: { project: Project; index: number }) => {
