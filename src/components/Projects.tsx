@@ -1,69 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
-interface Project {
-  number: string;
-  name: string;
-  tagline: string;
-  description: string;
-  stack: string;
-  status: string;
-  associated: string;
-}
-
-const projects: Project[] = [
-  {
-    number: "01",
-    name: "NEXUS",
-    tagline: "Next-gen Economic Exchange and User Solutions",
-    description:
-      "A SaaS platform for Microfinance Institutions streamlining credit assessment, loan management, and compliance reporting. Automated scoring, secure record-keeping, scalable architecture for financial inclusion.",
-    stack: "PostgreSQL, Python, Object-Oriented Design",
-    status: "In Development (Apr 2025 – Present)",
-    associated: "YT Groups",
-  },
-  {
-    number: "02",
-    name: "ALPHA",
-    tagline: "Advanced Learning Prediction and Hedging Algorithm",
-    description:
-      "Trading algorithm designed to forecast market movements. Integrates future-oriented simulations and real-time adjustments to outperform traditional strategies.",
-    stack: "Python, Machine Learning, Real-time Data Processing",
-    status: "In Development (Feb 2025 – Present)",
-    associated: "YT Groups",
-  },
-  {
-    number: "03",
-    name: "POLYEDGE",
-    tagline: "Prediction Market Intelligence Platform",
-    description:
-      "Browser-based prediction market intelligence tool that aggregates live news, applies multi-factor AI signal analysis, and produces quantified betting intelligence for Polymarket users. Features a 2-call Anthropic API architecture, confidence scoring, sentiment analysis, and signal breakdowns across momentum, media coverage, expert consensus, and market sentiment.",
-    stack: "HTML5, CSS3, Vanilla JavaScript, Anthropic Claude API",
-    status: "Completed (Mar 2026)",
-    associated: "YT Groups",
-  },
-  {
-    number: "04",
-    name: "SCOUT",
-    tagline: "Tactical Football Betting Intelligence Platform",
-    description:
-      "Local football betting intelligence platform built from a monolithic JSX file into a structured multi-component architecture. Integrates three live APIs — football-data.org for standings and fixtures, The Odds API for live betting odds, and Anthropic Claude for AI match analysis. Features TONI (Tactical Overperformance Normalised Index), an original metric scoring teams -10 to +10 by combining scoring efficiency, points vs goal difference, form momentum, defensive fragility, and odds market divergence to identify flukes vs legitimate form.",
-    stack: "React, JavaScript, football-data.org API, The Odds API, Anthropic Claude API",
-    status: "Completed (2026)",
-    associated: "YT Groups",
-  },
-  {
-    number: "05",
-    name: "STUDYBUDDY",
-    tagline: "AI-Powered Study Assistant",
-    description:
-      "AI-powered study assistant that helps students transform lecture notes and study materials into interactive flashcards. Full-stack application with secure OAuth2 authentication, persistent storage, and a React frontend backed by a FastAPI service layer.",
-    stack: "Python, FastAPI, TypeScript, React, PostgreSQL, OAuth2",
-    status: "Completed (2026)",
-    associated: "YT Groups",
-  },
-];
+import { projects, type Project } from "@/data/projects";
 
 const ProjectBlock = ({ project, index }: { project: Project; index: number }) => {
   const ref = useRef(null);
@@ -72,13 +10,13 @@ const ProjectBlock = ({ project, index }: { project: Project; index: number }) =
   return (
     <motion.div
       ref={ref}
-      className="border-t border-white pt-12 pb-16"
+      className="project-block pt-12 pb-16 px-2 md:px-4"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
       <motion.div
-        className="text-h2 font-display font-bold mb-4 opacity-20"
+        className="project-number text-h2 font-display font-bold mb-4 opacity-20"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 0.2 } : {}}
         transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -135,7 +73,7 @@ export const Projects = () => {
     <section ref={ref} className="min-h-screen section-padding">
       <div className="container-swiss">
         <motion.h2
-          className="text-section-label font-display mb-16"
+          className="text-section-label section-kicker font-display mb-16"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

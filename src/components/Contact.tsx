@@ -22,7 +22,7 @@ export const Contact = () => {
   ];
 
   return (
-    <section ref={ref} className="min-h-screen flex flex-col items-center justify-center section-padding">
+    <section id="contact" ref={ref} className="min-h-screen flex flex-col items-center justify-center section-padding">
       <div className="text-center">
         <motion.div
           className="mb-8"

@@ -45,7 +45,7 @@ export const Capabilities = () => {
     <section ref={ref} className="min-h-screen flex flex-col items-center justify-center section-padding">
       <div className="container-swiss">
         <motion.h2
-          className="text-h2 font-display font-bold text-center mb-20"
+          className="text-h2 section-kicker font-display font-bold text-center mb-20"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

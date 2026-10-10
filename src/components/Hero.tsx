@@ -1,35 +1,31 @@
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative">
-      <motion.h1
-        className="font-display text-hero font-bold text-center"
-        initial={{ opacity: 0, letterSpacing: "0.5em" }}
-        animate={{ opacity: 1, letterSpacing: "0em" }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      >
-        YORKE
-      </motion.h1>
-      
-      <motion.p
-        className="text-body-small font-body mt-4 tracking-widest uppercase"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      >
-        Systems Architect • Technologist • Co-Founder
-      </motion.p>
-
+    <header className="hero-shell flex min-h-screen flex-col justify-center px-6 md:px-12">
       <motion.div
-        className="absolute bottom-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 2, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-5xl"
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
-        <ChevronDown className="w-6 h-6 animate-bounce" />
+        <p className="text-[0.62rem] font-medium uppercase tracking-[0.38em] text-zinc-500">
+          Yorke
+        </p>
+
+        <h1 className="mt-6 text-5xl font-black uppercase tracking-[-0.08em] text-white md:text-8xl">
+          Systems architect.
+        </h1>
+
+        <p className="mt-6 max-w-xl text-sm uppercase tracking-[0.18em] text-zinc-400 md:text-base">
+          Technologist • Builder • Co-founder
+        </p>
+
+        <div className="mt-10 space-y-2 text-base leading-relaxed text-zinc-300 md:text-lg">
+          <p>Building technology for African markets.</p>
+          <p>Focused on systems, infrastructure, and products that scale.</p>
+        </div>
       </motion.div>
-    </section>
+    </header>
   );
 };

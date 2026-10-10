@@ -15,11 +15,11 @@ export const Manifesto = () => {
 
   return (
     <section ref={ref} className="min-h-screen flex flex-col items-center justify-center relative section-padding">
-      <div className="text-center">
+      <div className="text-center relative z-10">
         {lines.map((line, index) => (
           <motion.div
             key={index}
-            className="font-display text-h2 font-bold leading-tight"
+            className="font-display text-h2 font-bold leading-tight text-white"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{

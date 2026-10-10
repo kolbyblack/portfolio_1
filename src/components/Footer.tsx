@@ -1,36 +1,31 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { ChevronUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-20%" });
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer ref={ref} className="py-16">
-      <motion.div
-        className="text-center text-metadata font-body space-y-2"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <p className="opacity-70">Built with precision</p>
-        <p className="opacity-50">React • Framer Motion • Swiss Principles</p>
-        <p className="opacity-70 mt-4">© 2025 Yorke</p>
-        
-        <button
-          onClick={scrollToTop}
-          className="mt-8 flex items-center justify-center mx-auto gap-1 hover:opacity-70 transition-opacity group"
-        >
-          <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
-          <span>Back to top</span>
-        </button>
-      </motion.div>
+    <footer className="px-6 pb-10 md:px-12">
+      <div className="max-w-5xl border-t border-zinc-800 pt-6 text-sm uppercase tracking-[0.18em] text-zinc-500">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <p>Email</p>
+          <a href="mailto:kobbyawesome@gmail.com" className="text-zinc-200 transition-opacity hover:opacity-70">
+            kobbyawesome@gmail.com
+          </a>
+        </div>
+
+        <div className="mt-3 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <p>Links</p>
+          <div className="flex flex-wrap gap-4 text-zinc-300">
+            <Link to="/awards" className="hover:opacity-70">
+              Awards
+            </Link>
+            <a href="https://linkedin.com/in/kobby-essel" target="_blank" rel="noreferrer" className="hover:opacity-70">
+              LinkedIn
+            </a>
+            <a href="https://github.com/kolbyblack" target="_blank" rel="noreferrer" className="hover:opacity-70">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

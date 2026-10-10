@@ -2,133 +2,173 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Pure Swiss Design System */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    
-    /* Typography Scale */
-    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    
-    /* Spacing System (8px grid) */
-    --spacing-micro: 0.5rem;
-    --spacing-small: 1rem;
-    --spacing-medium: 2rem;
-    --spacing-large: 4rem;
-    --spacing-xl: 8rem;
-    --spacing-xxl: 16rem;
-    
-    /* Animation */
-    --ease-swiss: cubic-bezier(0.16, 1, 0.3, 1);
-    --duration-fast: 300ms;
-    --duration-medium: 600ms;
-    --duration-slow: 1000ms;
+    color-scheme: dark;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff;
+    background: #000;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
   html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    min-width: 320px;
+    min-height: 100%;
+    background: #000;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    cursor: none;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #aaa;
   }
 
   ::selection {
-    background-color: white;
-    color: black;
+    background: #fff;
+    color: #000;
   }
 }
 
-@layer utilities {
-  .font-display {
-    font-family: var(--font-display);
-  }
-  
-  .font-body {
-    font-family: var(--font-body);
+.site-layout {
+  min-height: 100vh;
+  padding: 80px 30px 48px;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: min(100%, 1100px);
+}
+
+.site-name {
+  display: inline-block;
+  font-size: 23px;
+  line-height: 1.2;
+  text-transform: lowercase;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  margin-top: 76px;
+  font-size: 23px;
+  line-height: 1.25;
+  text-transform: lowercase;
+}
+
+.site-nav a {
+  transition: color 150ms ease;
+}
+
+.site-nav a[aria-current="page"] {
+  color: #999;
+}
+
+.site-main {
+  margin-top: 84px;
+}
+
+.page-title {
+  margin: 0 0 42px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: lowercase;
+}
+
+.page-intro {
+  max-width: 700px;
+  margin: -22px 0 42px;
+  color: #ccc;
+}
+
+.bio-copy {
+  max-width: 760px;
+}
+
+.bio-copy p {
+  margin: 0 0 1.35em;
+}
+
+.entry-list {
+  max-width: 760px;
+}
+
+.entry {
+  padding: 0 0 28px;
+  margin: 0 0 28px;
+  border-bottom: 1px solid #292929;
+}
+
+.entry:last-child {
+  border-bottom: 0;
+}
+
+.entry h2,
+.entry h3 {
+  margin: 0 0 5px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.entry p {
+  max-width: 700px;
+  margin: 6px 0 0;
+  color: #ccc;
+}
+
+.entry-meta {
+  color: #999 !important;
+  font-size: 15px;
+}
+
+.site-footer {
+  margin-top: 60px;
+  color: #999;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .site-layout {
+    padding: 42px 22px 32px;
   }
 
-  .text-hero {
-    font-size: clamp(4rem, 20vw, 20rem);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
+  .site-name,
+  .site-nav {
+    font-size: 20px;
   }
 
-  .text-h1 {
-    font-size: clamp(3rem, 12vw, 12rem);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
+  .site-nav {
+    gap: 10px 20px;
+    margin-top: 48px;
   }
 
-  .text-h2 {
-    font-size: clamp(2rem, 8vw, 8rem);
-    line-height: 1;
-    letter-spacing: -0.01em;
-  }
-
-  .text-h3 {
-    font-size: clamp(1.5rem, 6vw, 6rem);
-    line-height: 1.1;
-  }
-
-  .text-section-label {
-    font-size: clamp(1rem, 2vw, 2rem);
-    line-height: 1.2;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .text-body-large {
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    line-height: 1.6;
-  }
-
-  .text-body {
-    font-size: clamp(0.875rem, 1.2vw, 1.2rem);
-    line-height: 1.7;
-  }
-
-  .text-body-small {
-    font-size: clamp(0.75rem, 1vw, 1rem);
-    line-height: 1.6;
-  }
-
-  .text-metadata {
-    font-size: clamp(0.7rem, 0.9vw, 0.9rem);
-    line-height: 1.5;
-  }
-
-  .section-padding {
-    padding-top: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
-  }
-
-  .container-swiss {
-    max-width: 90vw;
-    margin: 0 auto;
-    padding-left: var(--spacing-medium);
-    padding-right: var(--spacing-medium);
+  .site-main {
+    margin-top: 64px;
   }
 }

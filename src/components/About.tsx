@@ -50,10 +50,10 @@ export const About = () => {
   ];
 
   return (
-    <section ref={ref} className="min-h-screen section-padding">
+    <section id="about" ref={ref} className="min-h-screen section-padding">
       <div className="container-swiss">
         <motion.h2
-          className="text-section-label font-display mb-16"
+          className="text-section-label section-kicker font-display mb-16"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
